@@ -86,15 +86,19 @@ export function InlineMarkdownEditor({
     <div>
       <div className="border-b bg-muted px-4 py-2 flex justify-between">
         <h3 className="font-medium">{noteType}</h3>
-        <div className="flex bg-gray-100 rounded w-fit">
+        <div className="flex items-center space-x-1 rounded-md bg-muted p-1">
           <Button
-            variant={viewMode === "edit" ? "default" : "secondary"}
+            variant={viewMode === "edit" ? "default" : "ghost"}
+            size="sm"
+            className="h-8 px-3"
             onClick={() => setViewMode("edit")}
           >
             Edit
           </Button>
           <Button
-            variant={viewMode === "preview" ? "default" : "secondary"}
+            variant={viewMode === "preview" ? "default" : "ghost"}
+            size="sm"
+            className="h-8 px-3"
             onClick={() => setViewMode("preview")}
           >
             Preview

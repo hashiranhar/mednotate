@@ -1,3 +1,3 @@
-{
-  "quoteProps": "always"
-}
+module.exports = {
+  quoteProps: "always",
+};

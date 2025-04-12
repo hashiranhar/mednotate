@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -34,10 +35,13 @@ import {
   LogOut,
   MessageSquare,
   Mic,
+  Moon,
   Settings,
+  Sun,
   User,
   UserCircle,
 } from "lucide-react"
+import { Switch } from "./ui/switch"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -46,6 +50,7 @@ interface DashboardLayoutProps {
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname()
   const [open, setOpen] = useState(true)
+  const { theme, setTheme } = useTheme()
 
   const routes = [
     {
@@ -173,6 +178,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               </h1>
             </div>
             <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              >
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
               <Button variant="outline" size="sm">
                 <MessageSquare className="mr-2 h-4 w-4" />
                 Support

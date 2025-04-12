@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Link from "next/link"
 import { Edit, FileText, Filter, Plus, Search, Trash } from "lucide-react"
 
 export default function NotesPage() {
@@ -51,7 +52,8 @@ export default function NotesPage() {
         <TabsContent value="all" className="mt-4">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5].map((i) => (
-              <Card key={i}>
+            <Link href={`${i}`} key={i}>
+              <Card >
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between">
                     <div>
@@ -70,10 +72,10 @@ export default function NotesPage() {
                     <div
                       className={`rounded-full px-2 py-0.5 text-xs ${
                         i % 2 === 0
-                          ? "bg-yellow-100 text-yellow-800"
-                          : "bg-green-100 text-green-800"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-green-100 text-green-800"
                       }`}
-                    >
+                      >
                       {i % 2 === 0 ? "Draft" : "Completed"}
                     </div>
                   </div>
@@ -103,6 +105,7 @@ export default function NotesPage() {
                   </div>
                 </CardFooter>
               </Card>
+            </Link>
             ))}
           </div>
         </TabsContent>
