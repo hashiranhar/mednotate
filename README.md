@@ -43,8 +43,8 @@ Mednotate streamlines the clinical documentation process by converting patient-p
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Harvard-HSIL-Hackathon.git
-   cd Harvard-HSIL-Hackathon
+   git clone https://github.com/yourusername/mednotate.git
+   cd mednotate
    ```
 2. **Install dependencies**
    cd frontend
